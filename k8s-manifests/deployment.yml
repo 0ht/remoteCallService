@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: transfer
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: transfer
+  template:
+    metadata:
+      labels:
+        app: transfer
+    spec:
+      containers:
+      - name: transfer
+        image: 457105255302.dkr.ecr.ap-northeast-1.amazonaws.com/test/transfer:0.2
+        ports:
+        - containerPort: 9080

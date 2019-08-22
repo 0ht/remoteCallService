@@ -55,4 +55,17 @@
 		</dependency>
 	</dependencies>
 
+  <build>
+    <finalName>transfer</finalName>
+	<plugins>
+		 <plugin>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>3.0.0</version>
+				<configuration>
+					<warSourceDirectory>WebContent</warSourceDirectory>
+					<outputDirectory>./WAR/</outputDirectory>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
 </project>
