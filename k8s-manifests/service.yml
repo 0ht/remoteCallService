@@ -1,47 +1,13 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: transfer
+  name: remotecall
 spec:
   type: ClusterIP
   selector:
-    app: transfer
+    app: remotecall
   ports:
-  - name: transfer
+  - name: remotecall
     port: 9080
     targetPort: 9080
     protocol: TCP
----
-apiVersion: networking.istio.io/v1alpha3
-kind: Gateway
-metadata:
-  name: transfer-gateway
-spec:
-  selector:
-    istio: ingressgateway # use istio default controller
-  servers:
-  - port:
-      number: 80
-      name: http
-      protocol: HTTP
-    hosts:
-    - "*"
----
-apiVersion: networking.istio.io/v1alpha3
-kind: VirtualService
-metadata:
-  name: transfer
-spec:
-  hosts:
-  - "*"
-  gateways:
-  - transfer-gateway
-  http:
-  - match:
-    - uri:
-        prefix: /api/transfer
-    route:
-    - destination:
-        host: transfer
-        port:
-          number: 9080

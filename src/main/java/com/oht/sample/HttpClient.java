@@ -1,12 +1,8 @@
 package com.oht.sample;
 
-import java.io.StringReader;
 import java.net.URL;
 import java.util.HashMap;
 
-import javax.json.Json;
-import javax.json.JsonObject;
-import javax.json.JsonReader;
 import javax.ws.rs.client.ClientBuilder;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;

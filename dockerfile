@@ -1,2 +1,2 @@
 FROM websphere-liberty:webProfile7
-ADD ./WAR/Transfer.war /config/dropins/
+ADD ./WAR/transfer.war /config/dropins/
