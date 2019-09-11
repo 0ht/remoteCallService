@@ -6,11 +6,11 @@ spec:
   hosts:
   - "*"
   gateways:
-  - sfc-gateway
+  - remotecall-gateway
   http:
   - match:
     - uri:
-        prefix: /transfer
+        prefix: /remoteCallService
     route:
     - destination:
         host: remotecall

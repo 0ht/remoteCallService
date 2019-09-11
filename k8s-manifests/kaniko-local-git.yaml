@@ -7,9 +7,9 @@ spec:
   - name: kaniko
     image: gcr.io/kaniko-project/executor:latest
     args:
-    - --dockerfile=/dockerfile
+    - --dockerfile=/Dockerfile
     - --context=git://github.com/0ht/remoteCallService.git#refs/heads/master
-    - --destination=ohtom/remotecallservice:test
+    - --destination=ohtom/remotecallservice:0.2
     volumeMounts:
       - name: kaniko-secret
         mountPath: /root
