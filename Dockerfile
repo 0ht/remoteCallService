@@ -1,2 +1,2 @@
 FROM websphere-liberty:webProfile7
-ADD ./WAR/transfer.war /config/dropins/
+ADD ./WAR/remoteCallService.war /config/dropins/
